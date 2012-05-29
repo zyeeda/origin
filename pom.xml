@@ -93,8 +93,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.zyeeda</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>1</version>
+                    </dependency>
+                </dependencies>
                 <configuration>
                     <encoding>UTF-8</encoding>
+                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -143,4 +151,5 @@
             </build>
         </profile>
     </profiles>
+
 </project>
