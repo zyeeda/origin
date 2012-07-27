@@ -33,7 +33,7 @@
 
 由于引入了继承关系，当前项目无需指定 groupId，将自动从 GPP 中继承。
 
-当需要使用 GPP 中定义的某些依赖组件时，只要在 &lt;dependencies&gt; 中指定相应组件的 groupId 和 artifactId 就可以了，不用再指定版本了。
+当需要使用 GPP 中定义的某些依赖组件时，只要在 <dependencies> 中指定相应组件的 groupId 和 artifactId 就可以了，不用再指定版本了。
 
 可以直接使用 checkstyle 插件和 release 插件。
 
@@ -53,7 +53,7 @@
 使用 release 插件进行版本发布
 =============================
 
-**注意：此过程会对版本库和 Maven 服务器等产生持久性影响，所以请充分测试以后再执行。如果需要测试和学习请搭建模拟环境。**
+**注意：此过程会对版本库和 Maven 服务器等产生持久性影响，所以请充分测试以后再执行。如果需要学习和测试请搭建模拟环境。**
 
     # 不建议在已有工作区中进行如下操作，因此请保证所有代码都已经提交并推送到公共服务器，然后按次序执行如下操作：
 
@@ -73,9 +73,9 @@
 
 为了正确执行以上命令，需要对两处地方进行调整：
 
-首先，zyeeda\-project 项目的 POM 文件中写死了发布地址为 localhost:8081，要修改 dist.repo.host 和 dist.repo.port 两个参数，修改为内网部署的 Maven 服务器。
+首先，zyeeda\-project 项目的 POM 文件中写死了发布地址为 localhost:8081，要修改 dist.repo.host 和 dist.repo.port 两个参数，修改为内网部署的 Maven 服务器的地址和端口。
 
-然后，在 Maven 的配置文件（$MAVEN\_HOME/conf/settings.xml）中，找到 &lt;servers&gt; 配置，为里面增如下内容：
+然后，在 Maven 的配置文件（$MAVEN\_HOME/conf/settings.xml）中，找到 <servers> 配置，在里面增如下内容：
 
     <server>
         <id>zyeeda.repo</id>
@@ -85,6 +85,6 @@
 
 其中 ${username} 和 ${password} 要替换为可以访问 Maven 服务器的用户名和密码。
 
-如果仅仅想把项目构建结构推送到 Maven 服务器，可以执行如下命令：
+如果仅仅想把项目构建结果推送到 Maven 服务器，可以执行如下命令：
 
     mvn deploy
