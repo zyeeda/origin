@@ -267,7 +267,7 @@ limitations under the License.
 
     <profiles>
         <profile>
-            <id>use-jdk1_5</id>
+            <id>jdk5</id>
             <build>
                 <plugins>
                     <plugin>
