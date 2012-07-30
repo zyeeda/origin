@@ -293,13 +293,13 @@ limitations under the License.
             </activation>
             <distributionManagement>
                 <repository>
-                    <!--<id>zyeeda.repo</id>-->
-                    <!--<name>Internal Maven Repository of Zyeeda Co. Ltd.</name>-->
+                    <id>zyeeda.repo</id>
+                    <name>Internal Maven Repository of Zyeeda Co. Ltd.</name>
                     <url>http://${internal.maven.server.address}/nexus/content/repositories/releases</url>
                 </repository>
                 <snapshotRepository>
-                    <!--<id>zyeeda.repo</id>
-                    <name>Internal Maven Repoistory of Zyeeda Co. Ltd.</name>-->
+                    <id>zyeeda.repo</id>
+                    <name>Internal Maven Repoistory of Zyeeda Co. Ltd.</name>
                     <url>http://${internal.maven.server.address}/nexus/content/repositories/snapshots</url>
                 </snapshotRepository>
             </distributionManagement>
