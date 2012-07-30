@@ -45,8 +45,6 @@ limitations under the License.
     <properties>
         <slf4j.version>1.6.6</slf4j.version>
         <logback.version>1.0.6</logback.version>
-        <dist.repo.host>localhost</dist.repo.host>
-        <dist.repo.port>8081</dist.repo.port>
     </properties>
 
     <dependencyManagement>
