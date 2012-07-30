@@ -245,7 +245,6 @@ limitations under the License.
 
     <scm>
         <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-project</connection>
-        <developerConnection>scm:hg:${basedir}/../${project.artifactId}</developerConnection>
         <url>http://bitbucket.org/zyeeda/zyeeda-project</url>
         <tag>HEAD</tag>
     </scm>
