@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- $Id$ -->
+<!-- $Id: pom.xml,v 5476a53c1a6b 2012/07/30 07:35:52 tangrui $ -->
 
 <!--
 Copyright 2012 Zyeeda Co. Ltd.
@@ -249,13 +249,13 @@ limitations under the License.
 
     <distributionManagement>
         <repository>
-            <id>zyeeda.repo</id>
-            <name>Internal Maven Repository of Zyeeda Co. Ltd.</name>
+            <id>zyeeda.repo.releases</id>
+            <name>Internal Maven Release Repository of Zyeeda Co. Ltd.</name>
             <url>http://localhost:8081/nexus/content/repositories/releases</url>
         </repository>
         <snapshotRepository>
-            <id>zyeeda.repo</id>
-            <name>Internal Maven Repoistory of Zyeeda Co. Ltd.</name>
+            <id>zyeeda.repo.snapshots</id>
+            <name>Internal Maven Snapshot Repoistory of Zyeeda Co. Ltd.</name>
             <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
