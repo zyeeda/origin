@@ -41,12 +41,21 @@ limitations under the License.
     </licenses>
 
     <properties>
+        <servlet.api.version>2.5</servlet.api.version>
         <slf4j.version>1.7.2</slf4j.version>
         <logback.version>1.0.6</logback.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${servlet.api.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
             <dependency>
                 <groupId>org.slf4j</groupId>
                 <artifactId>slf4j-api</artifactId>
