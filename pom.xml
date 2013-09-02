@@ -360,12 +360,12 @@ limitations under the License.
             <id>internal-release</id>
             <distributionManagement>
                 <repository>
-                    <id>zyeeda.repo</id>
+                    <id>zyeeda.repo.releases</id>
                     <name>Internal Maven Repository of Zyeeda Co. Ltd.</name>
                     <url>http://10.1.2.11:8081/nexus/content/repositories/releases</url>
                 </repository>
                 <snapshotRepository>
-                    <id>zyeeda.repo</id>
+                    <id>zyeeda.repo.snapshots</id>
                     <name>Internal Maven Repoistory of Zyeeda Co. Ltd.</name>
                     <url>http://10.1.2.11/nexus/content/repositories/snapshots</url>
                 </snapshotRepository>
