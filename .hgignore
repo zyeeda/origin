@@ -12,4 +12,6 @@ syntax: glob
 *.orig
 *.tlog
 
+target
+
 syntax: regexp
