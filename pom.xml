@@ -3,7 +3,7 @@
 <!-- $Id: pom.xml,v aab91f36d98f 2013/09/02 09:19:19 tangrui $ -->
 
 <!--
-$License$
+$License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. Ltd. All rights reserved. $
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -30,9 +30,9 @@ $License$
 
     <properties>
         <servlet.api.version>2.5</servlet.api.version>
-        <slf4j.version>1.7.5</slf4j.version>
-        <logback.version>1.0.13</logback.version>
-        <testng.version>6.8.7</testng.version>
+        <slf4j.version>1.7.6</slf4j.version>
+        <logback.version>1.1.1</logback.version>
+        <testng.version>6.8.8</testng.version>
     </properties>
 
     <dependencyManagement>
@@ -152,7 +152,7 @@ $License$
                 <plugin>
                     <groupId>com.cj.jshintmojo</groupId>
                     <artifactId>jshint-maven-plugin</artifactId>
-                    <version>1.0.0</version>
+                    <version>1.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -172,7 +172,7 @@ $License$
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
-                    <version>9.1.0.v20131115</version>
+                    <version>9.1.2.v20140210</version>
                     <dependencies>
                         <dependency>
                             <groupId>org.codehaus.btm</groupId>
@@ -203,17 +203,17 @@ $License$
                         <dependency>
                             <groupId>javax.resource</groupId>
                             <artifactId>connector-api</artifactId>
-                            <version>1.5</version>
+                            <version>1.6-alpha-1</version>
                         </dependency>
                         <dependency>
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
-                            <version>5.1.27</version>
+                            <version>5.1.29</version>
                         </dependency>
                         <dependency>
                             <groupId>com.oracle</groupId>
-                            <artifactId>ojdbc14</artifactId>
-                            <version>10.2.0.5</version>
+                            <artifactId>ojdbc6</artifactId>
+                            <version>11.2.0.4</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -230,7 +230,7 @@ $License$
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
-                    <version>1.8.1</version>
+                    <version>1.9</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -277,7 +277,6 @@ $License$
                     </execution>
                 </executions>
                 <configuration>
-                    <version>2.1.9</version>
                     <directories>
                         <directory>src/main/webapp/scripts</directory>
                     </directories>
