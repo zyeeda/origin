@@ -6,12 +6,14 @@
 $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. Ltd. All rights reserved. $
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zyeeda</groupId>
-    <artifactId>zyeeda-project</artifactId>
+    <artifactId>zyeeda-origin</artifactId>
     <version>3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -276,16 +278,6 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
                         </goals>
                     </execution>
                 </executions>
-                <configuration>
-                    <directories>
-                        <directory>src/main/webapp/scripts</directory>
-                    </directories>
-                    <excludes>
-                        <exclude>src/main/webapp/scripts/coala</exclude>
-                        <exclude>src/main/webapp/scripts/vendors</exclude>
-                    </excludes>
-                    <failOnError>true</failOnError>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -332,8 +324,8 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
     </build>
 
     <scm>
-        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-project</connection>
-        <url>http://bitbucket.org/zyeeda/zyeeda-project</url>
+        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-origin</connection>
+        <url>http://bitbucket.org/zyeeda/zyeeda-origin</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -385,5 +377,4 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
             </distributionManagement>
         </profile>
     </profiles>
-
 </project>
