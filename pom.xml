@@ -13,7 +13,7 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zyeeda</groupId>
-    <artifactId>zyeeda-origin</artifactId>
+    <artifactId>origin</artifactId>
     <version>3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
