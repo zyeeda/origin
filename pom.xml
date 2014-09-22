@@ -35,6 +35,7 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
         <slf4j.version>1.7.6</slf4j.version>
         <logback.version>1.1.1</logback.version>
         <testng.version>6.8.8</testng.version>
+        <mysql.connector.version>5.1.29</mysql.connector.version>
     </properties>
 
     <dependencyManagement>
@@ -210,7 +211,7 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
                         <dependency>
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
-                            <version>5.1.29</version>
+                            <version>${mysql.connector.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -238,6 +239,21 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
                     <groupId>com.github.iron9light</groupId>
                     <artifactId>coffeescript-maven-plugin</artifactId>
                     <version>1.1.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.flywaydb</groupId>
+                    <artifactId>flyway-maven-plugin</artifactId>
+                    <version>3.0</version>
+                    <configuration>
+                        <table>ZDA_SCHEMA_VERSION</table>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>mysql</groupId>
+                            <artifactId>mysql-connector-java</artifactId>
+                            <version>${mysql.connector.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
