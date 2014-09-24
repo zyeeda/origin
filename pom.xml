@@ -245,7 +245,7 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
                     <artifactId>flyway-maven-plugin</artifactId>
                     <version>3.0</version>
                     <configuration>
-                        <table>ZDA_SCHEMA_VERSION</table>
+                        <table>CDE_SCHEMA_VERSION</table>
                     </configuration>
                     <dependencies>
                         <dependency>
