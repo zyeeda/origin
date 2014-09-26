@@ -52,10 +52,16 @@
 使用 release 插件进行版本发布
 =============================
 
-在进行发布之前，需要先修改一项配置，找到 Maven 的配置文件（$MAVEN\_HOME/conf/settings.xml 或 $HOME/.m2/settings.xml），在 <servers> 配置项里增如下内容：
+在进行发布之前，需要先修改一项配置，找到 Maven 的配置文件（$HOME/.m2/settings.xml 或 $MAVEN\_HOME/conf/settings.xml），在 <servers> 配置项里增如下内容：
 
     <server>
-        <id>maven.repo</id>
+        <id>maven.repo.releases</id>
+        <username>${username}</username>
+        <password>${password}</password>
+    </server>
+
+    <server>
+        <id>maven.repo.snapshots</id>
         <username>${username}</username>
         <password>${password}</password>
     </server>
