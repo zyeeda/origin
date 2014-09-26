@@ -88,8 +88,10 @@ hg flow develop # 切换到 develop 分支上
 mvn release:prepare # 发布准备
 mvn release:perform -Pinternal-release # 发布执行，这种发布方式会将结果推送到内网 Maven 服务器，如果仅想推送到本机测试环境，可以去掉 -P 参数
 
-hg flow default # 切换到 default 分支上
+hg flow master # 切换到 default 分支上，在 hgflow 里面叫 master
+hg log -l 5
 hg merge <倒数第二个 changeset>
+hg commit -m "Merge"
 
 hg push # 推送结果到 origin 工作区，在执行此操作之前，应该先验证发布是否成功
 
@@ -176,10 +178,10 @@ License = Copyright &copyright {date(date, '%Y')} Shenzhen Zyeeda Information Te
 [hooks]
 
 [http_proxy]
-#host =
+# host =
 
 [https_proxy]
-#host =
+# host =
 
 [hostfingerprints]
 bitbucket.org = 45:ad:ae:1a:cf:0e:73:47:06:07:e0:88:f5:cc:10:e5:fa:1c:f7:99
