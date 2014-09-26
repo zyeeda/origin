@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- $Id: pom.xml,v aab91f36d98f 2013/09/02 09:19:19 tangrui $ -->
+<!-- $Id$ -->
 
 <!--
-$License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. Ltd. All rights reserved. $
+$License$
 -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
