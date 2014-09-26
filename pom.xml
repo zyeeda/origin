@@ -36,6 +36,18 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
         <logback.version>1.1.1</logback.version>
         <testng.version>6.8.8</testng.version>
         <mysql.connector.version>5.1.29</mysql.connector.version>
+        <localhost.maven.repo.releases>
+            http://localhost:8081/nexus/content/repositories/releases
+        </localhost.maven.repo.releases>
+        <localhost.maven.repo.snapshots>
+            http://localhost:8081/nexus/content/repositories/snapshots
+        </localhost.maven.repo.snapshots>
+        <internal.maven.repo.releases>
+            http://10.1.2.11:8081/nexus/content/repositories/releases
+        </internal.maven.repo.releases>
+        <internal.maven.repo.snapshots>
+            http://10.1.2.11:8081/nexus/content/repositories/snapshots
+        </internal.maven.repo.snapshots>
     </properties>
 
     <dependencyManagement>
@@ -284,7 +296,7 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
                 <dependencies>
                     <dependency>
                         <groupId>com.zyeeda</groupId>
-                        <artifactId>zyeeda-checkstyle</artifactId>
+                        <artifactId>checkstyle</artifactId>
                         <version>1</version>
                     </dependency>
                 </dependencies>
@@ -323,21 +335,21 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
     </build>
 
     <scm>
-        <connection>scm:hg:http://bitbucket.org/zyeeda/zyeeda-origin</connection>
-        <url>http://bitbucket.org/zyeeda/zyeeda-origin</url>
+        <connection>scm:hg:https://bitbucket.org/zyeeda/origin</connection>
+        <url>https://bitbucket.org/zyeeda/origin</url>
         <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
         <repository>
-            <id>zyeeda.repo.releases</id>
-            <name>Internal Maven Release Repository of Zyeeda Co. Ltd.</name>
-            <url>http://localhost:8081/nexus/content/repositories/releases</url>
+            <id>maven.repo.releases</id>
+            <name>Internal Maven Release Repository</name>
+            <url>${localhost.maven.repo.releases}</url>
         </repository>
         <snapshotRepository>
-            <id>zyeeda.repo.snapshots</id>
-            <name>Internal Maven Snapshot Repoistory of Zyeeda Co. Ltd.</name>
-            <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+            <id>maven.repo.snapshots</id>
+            <name>Internal Maven Snapshot Repoistory</name>
+            <url>${localhost.maven.reop.snapshots}</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -364,14 +376,14 @@ $License: Copyright &copyright 2013 Shenzhen Zyeeda Information Technology Co. L
             <id>internal-release</id>
             <distributionManagement>
                 <repository>
-                    <id>zyeeda.repo.releases</id>
-                    <name>Internal Maven Repository of Zyeeda Co. Ltd.</name>
-                    <url>http://10.1.2.11:8081/nexus/content/repositories/releases</url>
+                    <id>maven.repo.releases</id>
+                    <name>Internal Maven Release Repository</name>
+                    <url>${internal.maven.repo.releases}</url>
                 </repository>
                 <snapshotRepository>
-                    <id>zyeeda.repo.snapshots</id>
-                    <name>Internal Maven Repoistory of Zyeeda Co. Ltd.</name>
-                    <url>http://10.1.2.11/nexus/content/repositories/snapshots</url>
+                    <id>maven.repo.snapshots</id>
+                    <name>Internal Maven Snapshot Repoistory</name>
+                    <url>${internal.maven.repo.snapshots}</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
