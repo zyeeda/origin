@@ -12,7 +12,7 @@ $License$
 
     <groupId>com.zyeeda</groupId>
     <artifactId>origin</artifactId>
-    <version>3</version>
+    <version>4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Global Parent Project of Zyeeda Co. Ltd.</name>
@@ -32,6 +32,8 @@ $License$
         <servlet.api.version>2.5</servlet.api.version>
         <slf4j.version>1.7.6</slf4j.version>
         <logback.version>1.1.1</logback.version>
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.10.8</mockito.version>
         <mysql.connector.version>5.1.29</mysql.connector.version>
         <localhost.maven.repo.releases>
             http://localhost:8081/nexus/content/repositories/releases
@@ -111,6 +113,22 @@ $License$
                         <groupId>org.slf4j</groupId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!-- junit -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- mockito -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
