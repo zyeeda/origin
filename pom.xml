@@ -17,6 +17,7 @@ $License$
 
     <name>Global Parent Project of Zyeeda Co. Ltd.</name>
     <description>This POM containts some global dependency and plugin configurations.</description>
+    <url>https://cde.io</url>
     <organization>
         <name>Shenzhen Zyeeda Infomation Technology Co. Ltd.</name>
         <url>http://www.zyeeda.com</url>
@@ -28,13 +29,33 @@ $License$
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Rui Tang</name>
+            <email>tangrui.cn@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Haifeng Chen</name>
+            <email>cheft.cn@gmail.com</email>
+        </developer>
+        <developer>
+            <name>Shusen Gu</name>
+            <email>childku@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/zyeeda/origin</connection>
+        <developerConnection>scm:git:https://github.com/zyeeda/origin</developerConnection>
+        <url>https://github.com/zyeeda/origin</url>
+    </scm>
+
     <properties>
         <servlet.api.version>2.5</servlet.api.version>
         <slf4j.version>1.7.6</slf4j.version>
         <logback.version>1.1.1</logback.version>
-        <junit.version>4.11</junit.version>
-        <mockito.version>1.10.8</mockito.version>
         <mysql.connector.version>5.1.29</mysql.connector.version>
+        <h2.version>1.4.181</h2.version>
         <localhost.maven.repo.releases>
             http://localhost:8081/nexus/content/repositories/releases
         </localhost.maven.repo.releases>
@@ -47,6 +68,12 @@ $License$
         <internal.maven.repo.snapshots>
             http://10.1.2.11:8081/nexus/content/repositories/snapshots
         </internal.maven.repo.snapshots>
+        <public.maven.repo.releases>
+            https://oss.sonatype.org/service/local/staging/deploy/maven2
+        </public.maven.repo.releases>
+        <public.maven.repo.snapshots>
+            https://oss.sonatype.org/content/repositories/snapshots
+        </public.maven.repo.snapshots>
     </properties>
 
     <dependencyManagement>
@@ -114,22 +141,6 @@ $License$
                     </exclusion>
                 </exclusions>
             </dependency>
-
-            <!-- junit -->
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-                <scope>test</scope>
-            </dependency>
-
-            <!-- mockito -->
-            <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-all</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -163,6 +174,19 @@ $License$
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.4</version>
                 </plugin>
@@ -185,11 +209,6 @@ $License$
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>properties-maven-plugin</artifactId>
                     <version>1.0-alpha-2</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.mortbay.jetty</groupId>
-                    <artifactId>maven-jetty-plugin</artifactId>
-                    <version>6.1.26</version>
                 </plugin>
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
@@ -232,6 +251,11 @@ $License$
                             <artifactId>mysql-connector-java</artifactId>
                             <version>${mysql.connector.version}</version>
                         </dependency>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
+                        </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
@@ -262,7 +286,7 @@ $License$
                 <plugin>
                     <groupId>org.flywaydb</groupId>
                     <artifactId>flyway-maven-plugin</artifactId>
-                    <version>3.0</version>
+                    <version>3.1</version>
                     <configuration>
                         <table>CDE_SCHEMA_VERSION</table>
                     </configuration>
@@ -271,6 +295,11 @@ $License$
                             <groupId>mysql</groupId>
                             <artifactId>mysql-connector-java</artifactId>
                             <version>${mysql.connector.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>com.h2database</groupId>
+                            <artifactId>h2</artifactId>
+                            <version>${h2.version}</version>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -288,10 +317,22 @@ $License$
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <!--<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+            </plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <encoding>UTF-8</encoding>
                     <debug>true</debug>
                     <failOnError>true</failOnError>
@@ -341,39 +382,30 @@ $License$
         </plugins>
     </build>
 
-    <scm>
-        <connection>scm:hg:https://bitbucket.org/zyeeda/origin</connection>
-        <url>https://bitbucket.org/zyeeda/origin</url>
-        <tag>HEAD</tag>
-    </scm>
-
     <distributionManagement>
         <repository>
             <id>maven.repo.releases</id>
-            <name>Internal Maven Release Repository</name>
+            <name>Maven Release Repository</name>
             <url>${localhost.maven.repo.releases}</url>
         </repository>
         <snapshotRepository>
             <id>maven.repo.snapshots</id>
-            <name>Internal Maven Snapshot Repoistory</name>
+            <name>Maven Snapshot Repoistory</name>
             <url>${localhost.maven.reop.snapshots}</url>
         </snapshotRepository>
     </distributionManagement>
 
     <profiles>
         <profile>
-            <id>jdk5</id>
+            <id>jdk6</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-compiler-plugin</artifactId>
                         <configuration>
-                            <source>1.5</source>
-                            <target>1.5</target>
-                            <encoding>UTF-8</encoding>
-                            <debug>true</debug>
-                            <failOnError>true</failOnError>
+                            <source>1.6</source>
+                            <target>1.6</target>
                         </configuration>
                     </plugin>
                 </plugins>
@@ -384,13 +416,28 @@ $License$
             <distributionManagement>
                 <repository>
                     <id>maven.repo.releases</id>
-                    <name>Internal Maven Release Repository</name>
+                    <name>Maven Release Repository</name>
                     <url>${internal.maven.repo.releases}</url>
                 </repository>
                 <snapshotRepository>
                     <id>maven.repo.snapshots</id>
-                    <name>Internal Maven Snapshot Repoistory</name>
+                    <name>Maven Snapshot Repoistory</name>
                     <url>${internal.maven.repo.snapshots}</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>public-release</id>
+            <distributionManagement>
+                <repository>
+                    <id>maven.repo.releases</id>
+                    <name>Maven Release Repository</name>
+                    <url>${public.maven.repo.releases}</url>
+                </repository>
+                <snapshotRepository>
+                    <id>maven.repo.snapshots</id>
+                    <name>Maven Snapshot Repoistory</name>
+                    <url>${public.maven.repo.snapshots}</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
