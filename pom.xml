@@ -216,6 +216,11 @@ $License$
                     <version>9.2.10.v20150310</version>
                     <dependencies>
                         <dependency>
+                            <groupId>org.eclipse.jetty</groupId>
+                            <artifactId>jetty-servlets</artifactId>
+                            <version>9.2.10.v20150310</version>
+                        </dependency>
+                        <dependency>
                             <groupId>com.zyeeda</groupId>
                             <artifactId>btm-jetty9-lifecycle</artifactId>
                             <version>2.1.4</version>
